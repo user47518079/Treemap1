@@ -57,17 +57,34 @@
   // see more basemap options at https://leaflet-extras.github.io/leaflet-providers/preview/
 
   // Read markers data from data.csv
-  $.get('./TZ1.csv', function(csvString)
-        $.get('./TZ2.csv', function(csvString)
-              {
+  $.get('./TZ1.csv', function(csvString){
 
     // Use PapaParse to convert string to array of objects
-    var data = Papa.parse(csvString, {header: true, worker: true, dynamicTyping: true}).data;
+    var data = Papa.parse(csvString, {header: true,  dynamicTyping: true}).data;
 
     // For each row in data, create a marker and add it to the map
     // For each row, columns `Latitude`, `Longitude`, and `Title` are required
     for (var i in data) {
       var row = data[i];
+
+      var marker = L.marker([row.Latitude, row.Longitude], {
+        opacity: 1
+      }).bindPopup(row.Title);
+      
+      marker.addTo(map);
+    }
+
+  });
+    
+     $.get('./TZ2.csv', function(csvString){
+
+    // Use PapaParse to convert string to array of objects
+    var data2 = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
+
+    // For each row in data, create a marker and add it to the map
+    // For each row, columns `Latitude`, `Longitude`, and `Title` are required
+    for (var i in data2) {
+      var row = data2[i];
 
       var marker = L.marker([row.Latitude, row.Longitude], {
         opacity: 1
