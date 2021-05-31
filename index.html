@@ -64,7 +64,7 @@ var myRenderer = L.canvas({ padding: 0.5 });
   var light =  L.esri.tiledMapLayer("http://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Imagery/MapServer", {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>'
   }).addTo(map); // EDIT - insert or remove ".addTo(map)" before last semicolon to display by default
-  controlLayers.addBaseLayer(light, 'Carto Light basemap');
+  controlLayers.addBaseLayer(dark, 'Carto dark basemap');
     
 
   //var terrain = L.esri.tiledMapLayer("http://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Imagery/MapServer", {
