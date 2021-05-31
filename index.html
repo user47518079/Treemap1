@@ -53,18 +53,21 @@ var myRenderer = L.canvas({ padding: 0.5 });
     collapsed: false
   }).addTo(map);
 
+    
+    L.esri.tiledMapLayer("http://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Imagery/MapServer", {}).addTo(map);
+    
   // display Carto basemap tiles with light features and labels
-  var light = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>'
-  }).addTo(map); // EDIT - insert or remove ".addTo(map)" before last semicolon to display by default
-  controlLayers.addBaseLayer(light, 'Carto Light basemap');
+  //var light = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+   /// attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>'
+ // }).addTo(map); // EDIT - insert or remove ".addTo(map)" before last semicolon to display by default
+ // controlLayers.addBaseLayer(light, 'Carto Light basemap');
 
     
       // display Carto basemap tiles with light features and labels
-  var light =  L.esri.tiledMapLayer("http://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Imagery/MapServer", {
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>'
-  }).addTo(map); // EDIT - insert or remove ".addTo(map)" before last semicolon to display by default
-  controlLayers.addBaseLayer(dark, 'Carto dark basemap');
+//  var light =  L.esri.tiledMapLayer("http://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Imagery/MapServer", {
+  //  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>'
+ // }).addTo(map); // EDIT - insert or remove ".addTo(map)" before last semicolon to display by default
+ // controlLayers.addBaseLayer(dark, 'Carto dark basemap');
     
 
   //var terrain = L.esri.tiledMapLayer("http://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Imagery/MapServer", {
