@@ -57,12 +57,7 @@ var myRenderer = L.canvas({ padding: 0.5 });
    // L.esri.tiledMapLayer("http://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Imagery/MapServer", {}).addTo(map);
     
   // display Carto basemap tiles with light features and labels
-  var light = L.tiledMapLayer({
-    url: 'http://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Imagery/MapServer',
-    detectRetina: false,
-    minZoom: 3,
-    maxZoom: 10
-  }, {
+  var light = L.esri.tiledMapLayer({'http://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Imagery/MapServer',{
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>'
   }).addTo(map); // EDIT - insert or remove ".addTo(map)" before last semicolon to display by default
   controlLayers.addBaseLayer(light, 'Carto nsw basemap');
