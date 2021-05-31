@@ -63,7 +63,10 @@ var myRenderer = L.canvas({ padding: 0.5 });
 
   // see more basemap options at https://leaflet-extras.github.io/leaflet-providers/preview/
 
-    
+      $.getJSON("Wards.geojson",function(data){
+    // add GeoJSON layer to the map once the file is loaded
+    L.geoJson(data).addTo(map);
+  });
     
   // Read markers data from data.csv
   $.get('./data.csv', function(csvString){
