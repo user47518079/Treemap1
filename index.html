@@ -75,7 +75,7 @@ var myRenderer = L.canvas({ padding: 0.5 });
     for (var i in data) {
       var row = data[i];
 
-      var marker = L.circleMarker([row.Latitude, row.Longitude], {
+      var marker = L.circleMarker([row.Latitude, row.Longitude],radius: 2, {
         renderer: myRenderer
       }).bindPopup(row.Title);
       
