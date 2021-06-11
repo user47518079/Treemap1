@@ -74,7 +74,7 @@ var myRenderer = L.canvas({ padding: 0.5 });
 
    
   // Read markers data from data.csv
-  $.get('./Udata.csv', function(csvString){
+  $.get('./data.csv', function(csvString){
 
     // Use PapaParse to convert string to array of objects
     var data = Papa.parse(csvString, {header: true,  dynamicTyping: true}).data;
