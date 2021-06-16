@@ -86,7 +86,8 @@ var myRenderer = L.canvas({ padding: 0.5 });
 
       var marker = L.circleMarker([row.Latitude, row.Longitude], {
         renderer: myRenderer,
-        radius: 2
+        radius: 2,
+        color: 'green'
       }).bindPopup(row.Title);
       
       marker.addTo(map);
