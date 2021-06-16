@@ -68,7 +68,7 @@ var myRenderer = L.canvas({ padding: 0.5 });
   }); // EDIT - insert or remove ".addTo(map)" before last semicolon to display by default
   controlLayers.addBaseLayer(terrain, 'Stamen Terrain basemap');
 
-   var color = (family === 'Myrtaceae') ? "yellow" : "red";
+   //var color = (family === 'Myrtaceae') ? "yellow" : "red";
     
 
   // see more basemap options at https://leaflet-extras.github.io/leaflet-providers/preview/
@@ -88,7 +88,7 @@ var myRenderer = L.canvas({ padding: 0.5 });
       var marker = L.circleMarker([row.Latitude, row.Longitude], {
         renderer: myRenderer,
         radius: 2,
-        color: 'color'
+        color: 'green'
       }).bindPopup(row.Title);
       
       marker.addTo(map);
