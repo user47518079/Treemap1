@@ -149,7 +149,18 @@ var myRenderer = L.canvas({ padding: 0.5 });
 			
 		var text = L.DomUtil.create('div');
 		text.id = "info_text";
-		text.innerHTML = "<strong>" + count + "</strong>"
+		text.innerHTML = "<strong>" +    
+    function countVisibleMarkers(map) {
+    var bounds = map.getBounds();
+    var count = 0;
+
+    map.eachLayer(function(layer) {
+        if (layer instanceof L.circleMarker) {
+            if (bounds.contains(layer.getLatLng())) count++;
+         }
+    });
+    return count;
+    } + "</strong>"
 		return text;
 		},
 
