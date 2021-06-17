@@ -92,13 +92,13 @@ var myRenderer = L.canvas({ padding: 0.5 });
         renderer: myRenderer,
         radius: 2,
         color: 'green'
-         var list = "<dl><dt>Address</dt>"
+         var list = 
+      }).bindPopup("<dl><dt>Address</dt>"
            + "<dd>" + Address + "</dd>"
            + "<dt>Species</dt>"
            + "<dd>" + Species + "</dd>"
            + "<dt>Tree ID</dt>"
-           + "<dd>" + TreeID + "</dd>"
-      }).bindPopup(list);
+           + "<dd>" + TreeID + "</dd>");
       
       marker.addTo(map);
     }
