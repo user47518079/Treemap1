@@ -110,7 +110,7 @@ var myRenderer = L.canvas({ padding: 0.5 });
     // For each row, columns `Latitude`, `Longitude`, and `Title` are required
     for (var i in data) {
       var row = data[i];
-      var family = (row.Family === 'Myrtaceae') ? "yellow" : "green";
+      var family = (row.Family === 'Myrtaceae') ? "yellow" : (row.Family === 'Oleaceae') ? "Blue" : "green";
       
       var marker = L.circleMarker([row.Latitude, row.Longitude], {
         renderer: myRenderer,
