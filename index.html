@@ -115,8 +115,8 @@ var myRenderer = L.canvas({ padding: 0.5 });
        
       var marker = L.circleMarker([row.Latitude, row.Longitude], {
         renderer: myRenderer,
-        radius: 2,
-        weight: 0.1,
+        radius: 2.5,
+        weight: 0.5,
         color: '#696969',
         fillColor: family,
       }).bindPopup("<dl><dt>Address</dt>"
