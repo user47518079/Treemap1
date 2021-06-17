@@ -143,7 +143,7 @@ var myRenderer = L.canvas({ padding: 0.5 });
          }
     });
     return count;
-}
+
     L.Control.textbox = L.Control.extend({
 		onAdd: function(map) {
 			
@@ -158,8 +158,8 @@ var myRenderer = L.canvas({ padding: 0.5 });
 		}
 	});
 	L.control.textbox = function(opts) { return new L.Control.textbox(opts);}
-	L.control.textbox({ position: 'bottomleft' }).addTo(map);
-     
+	L.control.textbox({ position: 'topright' }).addTo(map);
+    }
 
   //map.attributionControl.setPrefix(
     //'View <a href="https://github.com/HandsOnDataViz/leaflet-map-csv" target="_blank">code on GitHub</a>'
