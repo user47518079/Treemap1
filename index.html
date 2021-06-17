@@ -122,7 +122,7 @@ var myRenderer = L.canvas({ padding: 0.5 });
         fillColor: family,
       }).bindPopup("<dl><dt>Address</dt>"
            + "<dd>" + row.Address + "</dd>"
-           + "<dt>Species</dt>"
+           + "<dt>Botanic Name</dt>"
            + "<dd>" + row.Species + "</dd>"
            + "<dt>Tree ID</dt>"
            + "<dd>" + row.TreeID + "</dd>");
@@ -159,7 +159,7 @@ var myRenderer = L.canvas({ padding: 0.5 });
 		}
 	});
 	L.control.textbox = function(opts) { return new L.Control.textbox(opts);}
-	L.control.textbox({ position: 'topright' }).addTo(map);
+	L.control.textbox({ position: 'bottomright' }).addTo(map);
     
 
   //map.attributionControl.setPrefix(
