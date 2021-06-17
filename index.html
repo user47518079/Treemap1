@@ -143,13 +143,13 @@ var myRenderer = L.canvas({ padding: 0.5 });
          }
     });
     return count;
-
+    }
     L.Control.textbox = L.Control.extend({
 		onAdd: function(map) {
 			
 		var text = L.DomUtil.create('div');
 		text.id = "info_text";
-		text.innerHTML = "<strong>count</strong>"
+		text.innerHTML = "<strong>" + countVisibleMarkers + "</strong>"
 		return text;
 		},
 
@@ -159,7 +159,7 @@ var myRenderer = L.canvas({ padding: 0.5 });
 	});
 	L.control.textbox = function(opts) { return new L.Control.textbox(opts);}
 	L.control.textbox({ position: 'topright' }).addTo(map);
-    }
+    
 
   //map.attributionControl.setPrefix(
     //'View <a href="https://github.com/HandsOnDataViz/leaflet-map-csv" target="_blank">code on GitHub</a>'
