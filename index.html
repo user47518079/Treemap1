@@ -88,11 +88,20 @@ var myRenderer = L.canvas({ padding: 0.5 });
     for (var i in data) {
       var row = data[i];
 
+      var list = "<dl><dt>Address</dt>"
+           + "<dd>" + Address + "</dd>"
+           + "<dt>Species</dt>"
+           + "<dd>" + Species + "</dd>"
+           + "<dt>Tree ID</dt>"
+           + "<dd>" + TreeID + "</dd>"
+           + …
+
+      
       var marker = L.circleMarker([row.Latitude, row.Longitude], {
         renderer: myRenderer,
         radius: 2,
         color: 'green'
-      }).bindPopup(row.Title);
+      }).bindPopup(row.list);
       
       marker.addTo(map);
     }
