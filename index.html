@@ -55,7 +55,7 @@ var myRenderer = L.canvas({ padding: 0.5 });
   }).addTo(map);
 
     
-   // L.esri.tiledMapLayer("http://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Imagery/MapServer", {}).addTo(map);
+   // L.esri.tiledMapLayer("https://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Base_Map/MapServer", {}).addTo(map);
     
   // display Carto basemap tiles with light features and labels
   var light = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
@@ -63,11 +63,26 @@ var myRenderer = L.canvas({ padding: 0.5 });
   }).addTo(map); // EDIT - insert or remove ".addTo(map)" before last semicolon to display by default
   controlLayers.addBaseLayer(light, 'Carto Light basemap');
 
-  /* Stamen colored terrain basemap tiles with labels */
+  /* NSW Public Imagery */
   var image = L.esri.tiledMapLayer({
-    url: 'http://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Imagery/MapServer'
+    url: 'http://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Imagery/MapServer',
+    attribution: 'copy; <a href="https://www.openstreetmap.org/copyright">Fix1</a> contributors'
   });
   controlLayers.addBaseLayer(image, 'NSW Imagery');    
+    
+      /* NSW Basemap */
+  var base = L.esri.tiledMapLayer({
+    url: 'https://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Base_Map/MapServer',
+    attribution: 'copy; <a href="https://www.openstreetmap.org/copyright">Fix2</a> contributors'
+  });
+  controlLayers.addBaseLayer(base, 'NSW Base Map');    
+    
+    var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+    attribution: 'copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map); // EDIT - insert or remove ".addTo(map)" before last semicolon to display by default
+  controlLayers.addBaseLayer(osm, 'Open Street Map');
+   
       
       $.getJSON("./Wards.geojson",function(data){
     // add GeoJSON layer to the map once the file is loaded
