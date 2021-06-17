@@ -93,11 +93,11 @@ var myRenderer = L.canvas({ padding: 0.5 });
         radius: 2,
         color: 'green'
       }).bindPopup("<dl><dt>Address</dt>"
-           + "<dd>" + Address + "</dd>"
+           + "<dd>" + row.Address + "</dd>"
            + "<dt>Species</dt>"
-           + "<dd>" + Species + "</dd>"
+           + "<dd>" + row.Species + "</dd>"
            + "<dt>Tree ID</dt>"
-           + "<dd>" + TreeID + "</dd>");
+           + "<dd>" + row.TreeID + "</dd>");
       
       marker.addTo(map);
     }
