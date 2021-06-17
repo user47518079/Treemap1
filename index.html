@@ -110,8 +110,9 @@ var myRenderer = L.canvas({ padding: 0.5 });
     // For each row, columns `Latitude`, `Longitude`, and `Title` are required
     for (var i in data) {
       var row = data[i];
-      var family = (row.Family === 'Myrtaceae') ? "yellow" : (row.Family === 'Oleaceae') ? "Blue" : "green";
+      var family = (row.Family === 'Myrtaceae') ? "yellow" : (row.Family === 'Oleaceae') ? "blue" : (row.Family === 'N/A') ? "grey" : (row.Family === 'N/A') ? "grey" : (row.Family === 'Bignoniaceae') ? "pink" : (row.Family === 'Elaeocarpaceae') ? "purple" : (row.Family === 'Casuarinaceae') ? "#EE82EE" : (row.Family === 'Arecaceae') ? "#FFA500" : "green";
       
+       
       var marker = L.circleMarker([row.Latitude, row.Longitude], {
         renderer: myRenderer,
         radius: 2,
