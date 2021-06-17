@@ -132,6 +132,19 @@ var myRenderer = L.canvas({ padding: 0.5 });
 
   });
     
+       
+    function countVisibleMarkers(map) {
+    var bounds = map.getBounds();
+    var count = 0;
+
+    map.eachLayer(function(layer) {
+        if (layer instanceof L.circleMarker) {
+            if (bounds.contains(layer.getLatLng())) count++;
+         }
+    });
+    return count;
+}
+    
      
 
   //map.attributionControl.setPrefix(
