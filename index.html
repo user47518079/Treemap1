@@ -75,13 +75,7 @@ var myRenderer = L.canvas({ padding: 0.5 });
     
 
   // see more basemap options at https://leaflet-extras.github.io/leaflet-providers/preview/
-    var list = "<dl><dt>Address</dt>"
-           + "<dd>" + Address + "</dd>"
-           + "<dt>Species</dt>"
-           + "<dd>" + Species + "</dd>"
-           + "<dt>Tree ID</dt>"
-           + "<dd>" + TreeID + "</dd>"
-   
+      
   // Read markers data from data.csv
   $.get('./data.csv', function(csvString){
 
@@ -98,6 +92,12 @@ var myRenderer = L.canvas({ padding: 0.5 });
         renderer: myRenderer,
         radius: 2,
         color: 'green'
+         var list = "<dl><dt>Address</dt>"
+           + "<dd>" + Address + "</dd>"
+           + "<dt>Species</dt>"
+           + "<dd>" + Species + "</dd>"
+           + "<dt>Tree ID</dt>"
+           + "<dd>" + TreeID + "</dd>"
       }).bindPopup(list);
       
       marker.addTo(map);
