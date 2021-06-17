@@ -71,7 +71,7 @@ var myRenderer = L.canvas({ padding: 0.5 });
       
       $.getJSON("./Wards.geojson",function(data){
     // add GeoJSON layer to the map once the file is loaded
-      L.geoJson(data{
+      L.geoJson(data,{
         fillColor: '#0000FF',
         opacity: 2,
         fillOpacity: 0.7
