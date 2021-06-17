@@ -104,8 +104,10 @@ var myRenderer = L.canvas({ padding: 0.5 });
 
   });
     
-    var geojsonFeature = './Wards.geojson';
-    L.geoJSON(geojsonFeature).addTo(map);
+    $.getJSON(".Wards.geojson",function(data){
+    // add GeoJSON layer to the map once the file is loaded
+    L.geoJson(data).addTo(map);
+  });
     
      
 
