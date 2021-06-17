@@ -96,7 +96,7 @@ var myRenderer = L.canvas({ padding: 0.5 });
       }).addTo(map);
   });  
 
-   //var color = (family === 'Myrtaceae') ? "yellow" : "red";
+   var family = (family === 'Myrtaceae') ? "yellow" : "green";
     
 
   // see more basemap options at https://leaflet-extras.github.io/leaflet-providers/preview/
@@ -116,7 +116,7 @@ var myRenderer = L.canvas({ padding: 0.5 });
       var marker = L.circleMarker([row.Latitude, row.Longitude], {
         renderer: myRenderer,
         radius: 2,
-        color: 'green'
+        color: family
       }).bindPopup("<dl><dt>Address</dt>"
            + "<dd>" + row.Address + "</dd>"
            + "<dt>Species</dt>"
@@ -131,9 +131,9 @@ var myRenderer = L.canvas({ padding: 0.5 });
     
      
 
-  map.attributionControl.setPrefix(
-    'View <a href="https://github.com/HandsOnDataViz/leaflet-map-csv" target="_blank">code on GitHub</a>'
-  );
+  //map.attributionControl.setPrefix(
+    //'View <a href="https://github.com/HandsOnDataViz/leaflet-map-csv" target="_blank">code on GitHub</a>'
+  //);
 
   </script>
 </body>
