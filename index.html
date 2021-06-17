@@ -149,7 +149,7 @@ var myRenderer = L.canvas({ padding: 0.5 });
 		onAdd: function(map) {
 			
 		var text = L.DomUtil.create('div');
-		text.id = count;
+		text.id = "info_text";
 		text.innerHTML = countVisibleMarkers(map)
 		return text;
 		},
