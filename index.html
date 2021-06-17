@@ -69,7 +69,10 @@ var myRenderer = L.canvas({ padding: 0.5 });
   });
   controlLayers.addBaseLayer(image, 'NSW Imagery');    
       
-      
+      $.getJSON("./Wards.geojson",function(data){
+    // add GeoJSON layer to the map once the file is loaded
+    L.geoJson(data).addTo(map);
+  });  
 
    //var color = (family === 'Myrtaceae') ? "yellow" : "red";
     
@@ -102,11 +105,6 @@ var myRenderer = L.canvas({ padding: 0.5 });
       marker.addTo(map);
     }
 
-  });
-    
-    $.getJSON("./Wards.geojson",function(data){
-    // add GeoJSON layer to the map once the file is loaded
-    L.geoJson(data).addTo(map);
   });
     
      
