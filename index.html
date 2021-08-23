@@ -58,7 +58,7 @@ var myRenderer = L.canvas({ padding: 0.5 });
    // L.esri.tiledMapLayer("https://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Base_Map/MapServer", {}).addTo(map);
     
   // display Statia dark basemap with labels and labels
-  var light = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
+  var dark = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
     attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
   }); // EDIT - insert or remove ".addTo(map)" before last semicolon to display by default
   controlLayers.addBaseLayer(dark, 'Stadia Dark');
