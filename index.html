@@ -121,13 +121,13 @@ var myRenderer = L.canvas({ padding: 0.5 });
         color: '#000000',
         fillOpacity: 1,
         fillColor: family,
-      }).bindPopup("<dl><dt>Address</dt>"
+      }).bindPopup("<dl><dt><strong>Address</strong></dt>"
            + "<dd>" + row.Address + "</dd>"
-           + "<dt>Botanic Name</dt>"
+           + "<dt><strong>Botanic Name</strong></dt>"
            + "<dd>" + row.Species + "</dd>"
-	   + "<dt>Common Name</dt>"
+	   + "<dt><strong>Common Name</strong></dt>"
            + "<dd>" + row.Common + "</dd>"
-           + "<dt>Tree ID</dt>"
+           + "<dt><strong>Tree ID</strong></dt>"
            + "<dd>" + row.TreeID + "</dd>");
       
       marker.addTo(map);
